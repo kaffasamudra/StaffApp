@@ -370,7 +370,7 @@
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
     <script type="text/javascript">
-        new DataTable('#myTable');
+        DataTable('#myTable');
     </script>
     <script>
         // Menambahkan atau menghapus class "scrolled" berdasarkan posisi scroll
