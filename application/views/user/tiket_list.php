@@ -348,7 +348,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="<?= base_url("assets/") ?>js/script.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>\
+    <script type="text/javascript">
+        DataTable('#myTable');
+    </script>
 	<script>
 		// Menambahkan atau menghapus class "scrolled" berdasarkan posisi scroll
 		$(window).scroll(function () {
