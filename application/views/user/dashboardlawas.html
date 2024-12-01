@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        /* Gaya untuk tampilan animasi loading */
+        #spinner {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        /* Bola memantul */
+        .bounce-ball {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            border-radius: 50%;
+            position: relative;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        .shadow {
+            width: 50px;
+            height: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            animation: shadowScale 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) scaleX(1) scaleY(1);
+            }
+            50% {
+                transform: translateY(-120px) scaleX(1) scaleY(1);
+            }
+            90% {
+                transform: translateY(0) scaleX(1.1) scaleY(0.9);
+            }
+        }
+
+        @keyframes shadowScale {
+            0%, 100% {
+                transform: scaleX(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scaleX(0.6);
+                opacity: 0.1;
+            }
+            90% {
+                transform: scaleX(1.2);
+                opacity: 0.3;
+            }
+        }
+
+        .explode {
+            animation: explode 0.8s forwards ease-in-out;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(50);
+                opacity: 0;
+            }
+        }
+
+        #content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="bounce-ball" role="status"></div>
+        <div class="shadow"></div>
+    </div>
+
+    <!-- Container untuk item yang akan ditampilkan -->
+    <div id="content">
+        <h2>Selamat Datang!</h2>
+        <p>Item 1: Informasi penting di sini.</p>
+        <p>Item 2: Berita terbaru untuk Anda.</p>
+        <p>Item 3: Update fitur baru aplikasi.</p>
+        <p>Item 4: Penawaran khusus hari ini.</p>
+    </div>
+
+    <script>
+        const minimumLoadingTime = 3000; // Set waktu minimum untuk loading
+        const startTime = new Date().getTime();
+
+        window.addEventListener('load', () => {
+            const elapsedTime = new Date().getTime() - startTime;
+            const remainingTime = Math.max(minimumLoadingTime - elapsedTime, 0);
+
+            setTimeout(() => {
+                const spinner = document.getElementById('spinner');
+                const ball = document.querySelector('.bounce-ball');
+                const content = document.getElementById('content');
+
+                ball.classList.add('explode');
+
+                setTimeout(() => {
+                    spinner.style.display = 'none';
+                    content.style.display = 'block'; 
+                }, 800); // Sesuaikan dengan durasi animasi explode
+            }, remainingTime); // Menyesuaikan waktu tersisa dengan loading minimum
+        });
+    </script>
+</body>
+</html>
