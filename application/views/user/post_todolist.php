@@ -112,7 +112,7 @@
                                 Basic Table
                             </h5>
                             <h6 class="card-subtitle text-muted">
-                                <a href="<?= site_url('newform') ?>" class="btn btn-primary" role="button">+ Tulis To Do List</a>
+                                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahTodolist">+ Tulis To Do List</a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -206,6 +206,17 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="tambahTodolist" tabindex="-1" aria-labelledby="tambahTodoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tambhTodoLabel">Tulis To Do List</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- footer mobile -->
     <footer class="footer_section d-block d-lg-none">
         <div class="container">
