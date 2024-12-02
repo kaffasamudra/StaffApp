@@ -34,6 +34,6 @@ class Feedback_model extends CI_Model
 
     // Fungsi untuk mendapatkan jumlah data
     public function get_data_count() {
-        return $this->db->count_all('feedback'); // Ganti 'nama_tabel' dengan nama tabel Anda
+        return $this->db->count_all('feedback');
     }
 }
