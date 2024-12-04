@@ -173,7 +173,7 @@
                 <div class="modal-body">
                     <h1>Contact</h1>
                     <p>Hubungi kami melalui form berikut</p>
-                    <form action="" method="post">
+                    <form action="<?php echo site_url("dashboard/contact");?>" method="post">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" class="form-control" value="<? echo $this->session->userdata('username') ?>" required />

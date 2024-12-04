@@ -291,7 +291,7 @@
                 <div class="modal-body">
                     <h1>Contact</h1>
                     <p>Hubungi kami melalui form berikut</p>
-                    <form action="<?php site_url('Dashboard/contact'); ?>" method="post">
+                 <form action="<?= site_url('user/Dashboard/contact') ?>" method="post">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" name="name" placeholder="your name" value="<?php echo $this->session->userdata('username'); ?>" required />

@@ -56,3 +56,4 @@ $route['image/delete/(.+)'] = 'image/delete/$1';
 
 $route['image/edit/(.+)'] = 'image/edit/$1';
 $route['image/update/(.+)'] = 'image/update/$1';
+$route['kontak'] = 'Dashboard/contact';

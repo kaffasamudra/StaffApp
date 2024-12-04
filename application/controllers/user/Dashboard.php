@@ -26,13 +26,16 @@ class Dashboard extends CI_Controller
 				'email' => $this->input->post('email'),
 				'message' => $this->input->post('message')
 			];
-
-			$feedback_saved = $this->feedback_model->insert($feedback);
 			
+			$feedback_saved = $this->feedback_model->insert($feedback);
+
 			if ($feedback_saved) {
 				$this->session->set_flashdata('message', 'Your message has been sent!');
 				redirect('user/dashboard');
 			}
+			// if ($feedback_saved) {
+			//   return $this->load->view('user/thanks');
+			// }
 		}
 		
 			$this->load->view('user/dashboard');
