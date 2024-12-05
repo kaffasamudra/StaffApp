@@ -38,7 +38,7 @@
                                 <h5 class="card-title"><?php echo $this->session->userdata('username'); ?></h5> 
                                 <h5 class="card-title">(<?php echo $this->session->userdata('bagian'); ?>)</h5>
                                 <p class="card-text"><?php echo $this->session->userdata('role'); ?></p>
-                                <a href="<?= base_url('profile/edit'); ?>" class="btn btn-primary">Edit Profil</a>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editpp">Edit Profil</a>
                                 <a href="<?= base_url('auth/logout'); ?>" class="btn btn-secondary">Logout</a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                             </div>
@@ -60,8 +60,6 @@
                             </ul>
                         </div>
                         <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
-
-
                     </div>
                     <!-- mode desktop -->
                     <div class="d-none d-lg-block">
@@ -499,7 +497,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="<?= base_url("assets/") ?>js/script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -514,6 +511,24 @@
             }
         });
     </script>
+<script>
+    // Cari tombol "Back to Top"
+    const backToTop = document.querySelector('.back-to-top');
+
+    // Ketika kita menggulung (scroll) halaman
+    window.addEventListener('scroll', () => {
+        // Jika posisi scroll lebih dari 0 (tidak di atas)
+        if (window.scrollY > 0) {
+            backToTop.style.display = 'block'; // Tunjukkan tombol
+        } else {
+            backToTop.style.display = 'none'; // Sembunyikan tombol
+        }
+    });
+
+    // Mulai dengan tombol disembunyikan
+    backToTop.style.display = 'none';
+</script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Buat observer untuk memantau elemen saat masuk ke viewport

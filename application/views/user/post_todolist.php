@@ -47,7 +47,7 @@
                                 <h5 class="card-title"><?php echo $this->session->userdata('username'); ?></h5> 
                                 <h5 class="card-title">(<?php echo $this->session->userdata('bagian'); ?>)</h5>
                                 <p class="card-text"><?php echo $this->session->userdata('role'); ?></p>
-                                <a href="<?= base_url('profile/edit'); ?>" class="btn btn-primary">Edit Profil</a>
+                                <a href="<?= base_url('profile/edit'); ?>" class="btn btn-primary" data-toggle="modal" data-target="#editpp">Edit Profil</a>
                                 <a href="<?= base_url('auth/logout'); ?>" class="btn btn-secondary">Logout</a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
                             </div>
@@ -173,7 +173,7 @@
                 <div class="modal-body">
                     <h1>Contact</h1>
                     <p>Hubungi kami melalui form berikut</p>
-                    <form action="<?php echo site_url("dashboard/contact");?>" method="post">
+                    <form action="<?php echo site_url("user/dashboard/contact");?>" method="post">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" class="form-control" value="<? echo $this->session->userdata('username') ?>" required />
@@ -373,10 +373,10 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="<?= base_url("assets/") ?>js/script.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
     <script>
