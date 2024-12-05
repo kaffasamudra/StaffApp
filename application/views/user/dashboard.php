@@ -501,7 +501,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // Menambahkan atau menghapus class "scrolled" berdasarkan posisi scroll
         $(window).scroll(function () {
             var navbar = $('.navbar');
             if ($(window).scrollTop() > 50) {
@@ -511,24 +510,19 @@
             }
         });
     </script>
-<script>
-    // Cari tombol "Back to Top"
-    const backToTop = document.querySelector('.back-to-top');
+    <script>
+        const backToTop = document.querySelector('.back-to-top');
 
-    // Ketika kita menggulung (scroll) halaman
-    window.addEventListener('scroll', () => {
-        // Jika posisi scroll lebih dari 0 (tidak di atas)
-        if (window.scrollY > 0) {
-            backToTop.style.display = 'block'; // Tunjukkan tombol
-        } else {
-            backToTop.style.display = 'none'; // Sembunyikan tombol
-        }
-    });
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
 
-    // Mulai dengan tombol disembunyikan
-    backToTop.style.display = 'none';
-</script>
-
+        backToTop.style.display = 'none';
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Buat observer untuk memantau elemen saat masuk ke viewport

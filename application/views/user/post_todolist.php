@@ -383,7 +383,6 @@
         DataTable('#myTable');
     </script>
     <script>
-        // Menambahkan atau menghapus class "scrolled" berdasarkan posisi scroll
         $(window).scroll(function () {
             var navbar = $('.navbar');
             if ($(window).scrollTop() > 50) {
@@ -392,6 +391,18 @@
                 navbar.removeClass('scrolled');
             }
         });
+    </script>
+    <script>
+        const backToTop = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 0){
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        backToTop.style.display = 'none';
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
